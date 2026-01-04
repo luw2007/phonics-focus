@@ -1,6 +1,9 @@
 {
   "name": "phonics-focus",
   "version": "1.1.0",
+  "scripts": {
+    "build": "rm -f phonics-focus.zip && zip -r phonics-focus.zip manifest.json _locales background content data icons popup LICENSE"
+  },
   "dependencies": {
     "cmu-pronouncing-dictionary": "^3.0.0"
   }

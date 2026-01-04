@@ -1,3 +1,44 @@
+/* Dark Mode Variables - Manual & Auto */
+:root[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --bg-secondary: #252526;
+  --text-color: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --text-tertiary: #6e6e6e;
+
+  --border-color: #3e3e42;
+  --border-hover: #505055;
+
+  --card-bg-start: #252526;
+  --card-bg-end: #2d2d30;
+
+  --input-bg: #2d2d30;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-color: #1e1e1e;
+    --bg-secondary: #252526;
+    --text-color: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --text-tertiary: #6e6e6e;
+
+    --border-color: #3e3e42;
+    --border-hover: #505055;
+
+    --card-bg-start: #252526;
+    --card-bg-end: #2d2d30;
+
+    --input-bg: #2d2d30;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -542,7 +583,7 @@ body {
 .hash-prefix {
   position: absolute;
   left: 8px;
-  color: #999
+  color: #999;
   font-size: 12px;
   pointer-events: none;
 }
@@ -550,25 +591,25 @@ body {
 .hex-input {
   width: 72px;
   padding: 5px 8px 5px 20px;
-  border: 1px solid #dd
+  border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 12px;
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  color: #333
+  color: #333;
   text-transform: uppercase;
-  background: #fff
+  background: #fff;
   transition: border-color 0.2s;
 }
 
 .hex-input:focus {
   outline: none;
-  border-color: #ff6b35
-  box-shadow: 0 0 0 2px rgba(255, 107, 53
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
 }
 
 .popup-footer {
   padding: 12px 16px;
-  border-top: 1px solid #ee
+  border-top: 1px solid #eee;
   text-align: center;
 }
 
@@ -581,32 +622,32 @@ body {
 
 .lang-select {
   font-size: 11px;
-  color: var(--text-tertiary);
-  border: 1px solid var(--border-color);
+  color: #888;
+  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 2px 4px;
-  background: var(--bg-color);
+  background: white;
   cursor: pointer;
   outline: none;
 }
 
 .lang-select:hover {
-  border-color: var(--border-hover);
-  color: var(--text-secondary);
+  border-color: #ccc;
+  color: #666;
 }
 
 .footer-link {
   font-size: 12px;
-  color: var(--text-tertiary);
+  color: #888;
   text-decoration: none;
 }
 
 .footer-link:hover {
-  color: var(--primary-color);
+  color: #ff6b35;
 }
 
 .tts-settings {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #eee;
   padding-top: 16px;
 }
 
@@ -629,16 +670,16 @@ body {
   display: block;
   padding: 8px 12px;
   text-align: center;
-  border: 2px solid var(--border-color);
+  border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 12px;
   transition: all 0.2s;
 }
 
 .tts-mode-option input:checked+.tts-mode-label {
-  border-color: var(--primary-color);
-  background: rgba(var(--primary-color-rgb), 0.05);
-  color: var(--primary-color);
+  border-color: #ff6b35;
+  background: rgba(255, 107, 53, 0.05);
+  color: #ff6b35;
 }
 
 .tts-voice-settings {
@@ -675,24 +716,25 @@ body {
 .preview-btn {
   width: 36px;
   height: 36px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background: #fff;
+  background: var(--input-bg);
   cursor: pointer;
   font-size: 12px;
   transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-color);
 }
 
 .preview-btn:hover {
-  border-color: #ff6b35;
-  color: #ff6b35;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .preview-btn:active {
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(var(--primary-color-rgb), 0.1);
 }
 
 .rate-slider-row {
@@ -703,7 +745,7 @@ body {
 
 .rate-label {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
@@ -712,7 +754,7 @@ body {
   height: 4px;
   -webkit-appearance: none;
   appearance: none;
-  background: #ddd;
+  background: var(--border-color);
   border-radius: 2px;
   outline: none;
 }
@@ -723,13 +765,13 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #ff6b35;
+  background: var(--primary-color);
   cursor: pointer;
 }
 
 .rate-value {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   min-width: 32px;
   text-align: right;
 }

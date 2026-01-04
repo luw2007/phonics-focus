@@ -15,10 +15,21 @@
         <span class="logo-icon">📚</span>
         <span class="logo-text" data-i18n="logo_text">Phonics Focus</span>
       </div>
-      <label class="toggle-switch">
-        <input type="checkbox" id="enableToggle">
-        <span class="toggle-slider"></span>
-      </label>
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="icon-btn" id="langToggle" title="Switch Language">
+            <span class="icon-text">文</span>
+          </button>
+          <button class="icon-btn" id="themeToggle" title="Toggle Theme">
+            <span class="theme-icon-sun">☀️</span>
+            <span class="theme-icon-moon hidden">🌙</span>
+          </button>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
     </header>
 
     <main class="popup-main">
@@ -150,6 +161,14 @@
         </div>
       </section>
     </main>
+    <footer class="popup-footer">
+      <div class="footer-controls">
+        <a href="https://github.com/cocojojo5213/phonics-app" target="_blank" class="footer-link"
+          data-i18n="footer_hint">
+          配合 Phonics App 使用效果更佳
+        </a>
+      </div>
+    </footer>
   </div>
   <script type="module" src="popup.js"></script>
 </body>

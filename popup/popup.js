@@ -70,7 +70,12 @@ class PopupController {
     this.humanVoiceSettings = document.getElementById('humanVoiceSettings');
     this.humanSourceSelect = document.getElementById('humanSourceSelect');
     this.humanPreviewBtn = document.getElementById('humanPreviewBtn');
-    this.uiLangSelect = document.getElementById('uiLangSelect');
+
+    // Header Actions
+    this.langToggle = document.getElementById('langToggle');
+    this.themeToggle = document.getElementById('themeToggle');
+    this.themeIconSun = document.querySelector('.theme-icon-sun');
+    this.themeIconMoon = document.querySelector('.theme-icon-moon');
 
     this.activeRules = [];
     this.focusedRule = null;
@@ -78,6 +83,7 @@ class PopupController {
     this.highlightColor = '#ff6b35';
     this.currentPlayIndex = 0;
     this.lastRenderedPattern = null;
+    this.currentTheme = 'auto'; // auto, light, dark
 
     this.init();
   }
@@ -89,6 +95,7 @@ class PopupController {
     this.updatePatternOptions();
     this.updateRuleCard();
     this.loadVoices();
+    this.applyTheme(); // Apply initial theme
   }
 
   async loadSettings() {
@@ -99,7 +106,8 @@ class PopupController {
       'highlightStyle',
       'ttsConfig',
       'highlightColor',
-      'uiLanguage'
+      'uiLanguage',
+      'theme'
     ]);
 
     this.enableToggle.checked = settings.enabled ?? true;
@@ -107,10 +115,7 @@ class PopupController {
     this.highlightStyle = settings.highlightStyle ?? 'underline';
     this.highlightColor = settings.highlightColor ?? '#ff6b35';
     currentLang = settings.uiLanguage ?? 'auto';
-
-    if (this.uiLangSelect) {
-      this.uiLangSelect.value = currentLang;
-    }
+    this.currentTheme = settings.theme ?? 'auto';
 
     await loadMessages(currentLang);
     applyI18n();
@@ -176,8 +181,18 @@ class PopupController {
     });
 
     if (this.uiLangSelect) {
+      // Keep uiLangSelect logic just in case, though element is removed
       this.uiLangSelect.addEventListener('change', async () => {
-        currentLang = this.uiLangSelect.value;
+        // ... (legacy logic)
+      });
+    }
+
+    // Header Toggle Logic
+    if (this.langToggle) {
+      this.langToggle.addEventListener('click', async () => {
+        // Toggle between zh and en
+        const newLang = currentLang === 'zh' ? 'en' : 'zh';
+        currentLang = newLang;
         chrome.storage.local.set({ uiLanguage: currentLang });
         await loadMessages(currentLang);
         applyI18n();
@@ -185,6 +200,22 @@ class PopupController {
         this.renderActiveRulesList();
         this.updateRuleCard();
         this.loadVoices();
+      });
+    }
+
+    if (this.themeToggle) {
+      this.themeToggle.addEventListener('click', () => {
+        // Cycle: auto -> light -> dark -> auto
+        if (this.currentTheme === 'auto') {
+          this.currentTheme = 'light';
+        } else if (this.currentTheme === 'light') {
+          this.currentTheme = 'dark';
+        } else {
+          this.currentTheme = 'auto';
+        }
+
+        chrome.storage.local.set({ theme: this.currentTheme });
+        this.applyTheme();
       });
     }
 
@@ -323,6 +354,30 @@ class PopupController {
         }
       });
     }
+
+    // Dynamically update CSS variable
+    document.documentElement.style.setProperty('--primary-color', color);
+
+    // Update RGB variable for rgba() usage
+    const rgb = this.hexToRgb(color);
+    if (rgb) {
+      document.documentElement.style.setProperty('--primary-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
+    }
+  }
+
+  hexToRgb(hex) {
+    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, (m, r, g, b) => {
+      return r + r + g + g + b + b;
+    });
+
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
   }
 
   togglePattern(item) {
@@ -576,6 +631,48 @@ class PopupController {
           }
         }
       );
+    }
+  }
+
+  applyTheme() {
+    const root = document.documentElement;
+
+    // Reset manual override
+    root.removeAttribute('data-theme');
+
+    // Update Icons
+    // Logic: 
+    // If auto: show Sun/Moon based on system? Or show 'Auto' icon?
+    // Let's keep it simple: Show Sun if Light/Auto(Light), Moon if Dark/Auto(Dark)
+    // Actually, user requested toggle. 
+    // Let's just update the icon based on resolved theme.
+
+    let resolvedTheme = this.currentTheme;
+    if (resolvedTheme === 'auto') {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        resolvedTheme = 'dark';
+      } else {
+        resolvedTheme = 'light';
+      }
+    } else {
+      root.setAttribute('data-theme', resolvedTheme);
+    }
+
+    if (resolvedTheme === 'dark') {
+      this.themeIconSun.classList.add('hidden');
+      this.themeIconMoon.classList.remove('hidden');
+    } else {
+      this.themeIconSun.classList.remove('hidden');
+      this.themeIconMoon.classList.add('hidden');
+    }
+
+    // Optional: Add visual feedback for 'Auto' state (e.g. slightly different icon opacity or a badge)
+    if (this.currentTheme === 'auto') {
+      this.themeToggle.style.opacity = '0.6';
+      this.themeToggle.title = 'Theme: Auto';
+    } else {
+      this.themeToggle.style.opacity = '1';
+      this.themeToggle.title = `Theme: ${this.currentTheme.charAt(0).toUpperCase() + this.currentTheme.slice(1)}`;
     }
   }
 
