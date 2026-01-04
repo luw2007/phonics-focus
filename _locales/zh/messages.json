@@ -1,0 +1,55 @@
+{
+  "ext_name": { "message": "Phonics Focus" },
+  "ext_description": { "message": "沉浸式自然拼读伴侣 - 在网页浏览中学习英语发音规则" },
+
+  "title": { "message": "Phonics Focus" },
+  "logo_text": { "message": "Phonics Focus" },
+
+  "section_current_rule": { "message": "当前学习规则" },
+  "section_select_rule": { "message": "选择规则" },
+  "section_highlight_style": { "message": "高亮样式" },
+  "section_tts_settings": { "message": "发音设置" },
+
+  "category_letters": { "message": "26个字母基础发音" },
+  "category_short_vowels": { "message": "短元音组合" },
+  "category_long_vowels": { "message": "长元音" },
+  "category_consonant_blends": { "message": "辅音组合" },
+  "category_r_controlled": { "message": "R控制元音" },
+  "category_other_vowels": { "message": "其他元音组合" },
+
+  "style_underline": { "message": "下划线" },
+  "style_background": { "message": "背景色" },
+  "style_color": { "message": "文字色" },
+  "style_inline": { "message": "嵌入" },
+  "ipa_inline_suffix": { "message": "(IPA)" },
+  "bg_color_label": { "message": "背景色" },
+
+  "tts_mode_tts": { "message": "合成发音 (TTS)" },
+  "tts_mode_human": { "message": "真人发音" },
+
+  "loading_voices": { "message": "加载语音列表中..." },
+  "preview_title": { "message": "试听" },
+  "rate_label": { "message": "语速" },
+  "rate_unit_suffix": { "message": "x" },
+
+  "footer_hint": { "message": "配合 Phonics App 使用效果更佳" },
+
+  "chip_remove_symbol": { "message": "×" },
+  "please_select_rule": { "message": "请选择规则" },
+  "dash_symbol": { "message": "-" },
+
+  "no_voices_detected": { "message": "未检测到可用语音" },
+  "voice_source_system": { "message": "系统" },
+  "voice_source_online": { "message": "在线" },
+
+  "tooltip_no_ipa": { "message": "无音标" },
+  "tooltip_rule_prefix": { "message": "规则:" },
+  "tooltip_speak": { "message": "🔊 发音" },
+
+  "human_source_free_dictionary": { "message": "Free Dictionary API" },
+  "human_source_youdao": { "message": "有道词典" },
+  "human_source_baidu": { "message": "百度翻译" },
+  "human_source_google": { "message": "Google 翻译" },
+  "human_audio_play_failed": { "message": "无法播放音频，请尝试其他音源" },
+  "human_audio_fetch_failed": { "message": "获取音频失败，请尝试其他音源" }
+}

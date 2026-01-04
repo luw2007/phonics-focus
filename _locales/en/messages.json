@@ -1,0 +1,55 @@
+{
+  "ext_name": { "message": "Phonics Focus" },
+  "ext_description": { "message": "Immersive phonics companion — learn pronunciation while browsing" },
+
+  "title": { "message": "Phonics Focus" },
+  "logo_text": { "message": "Phonics Focus" },
+
+  "section_current_rule": { "message": "Current Rule" },
+  "section_select_rule": { "message": "Select Rule" },
+  "section_highlight_style": { "message": "Highlight Style" },
+  "section_tts_settings": { "message": "Pronunciation Settings" },
+
+  "category_letters": { "message": "26 Basic Letters" },
+  "category_short_vowels": { "message": "Short Vowels" },
+  "category_long_vowels": { "message": "Long Vowels" },
+  "category_consonant_blends": { "message": "Consonant Blends" },
+  "category_r_controlled": { "message": "R-Controlled Vowels" },
+  "category_other_vowels": { "message": "Other Vowel Teams" },
+
+  "style_underline": { "message": "Underline" },
+  "style_background": { "message": "Background" },
+  "style_color": { "message": "Text Color" },
+  "style_inline": { "message": "Inline" },
+  "ipa_inline_suffix": { "message": "(IPA)" },
+  "bg_color_label": { "message": "Background Color" },
+
+  "tts_mode_tts": { "message": "Synthesized (TTS)" },
+  "tts_mode_human": { "message": "Human" },
+
+  "loading_voices": { "message": "Loading voices..." },
+  "preview_title": { "message": "Preview" },
+  "rate_label": { "message": "Rate" },
+  "rate_unit_suffix": { "message": "x" },
+
+  "footer_hint": { "message": "Works best with Phonics App" },
+
+  "chip_remove_symbol": { "message": "×" },
+  "please_select_rule": { "message": "Please select a rule" },
+  "dash_symbol": { "message": "-" },
+
+  "no_voices_detected": { "message": "No voices available" },
+  "voice_source_system": { "message": "System" },
+  "voice_source_online": { "message": "Online" },
+
+  "tooltip_no_ipa": { "message": "No IPA" },
+  "tooltip_rule_prefix": { "message": "Rule:" },
+  "tooltip_speak": { "message": "🔊 Speak" },
+
+  "human_source_free_dictionary": { "message": "Free Dictionary API" },
+  "human_source_youdao": { "message": "Youdao Dictionary" },
+  "human_source_baidu": { "message": "Baidu Translate" },
+  "human_source_google": { "message": "Google Translate" },
+  "human_audio_play_failed": { "message": "Cannot play audio, try another source" },
+  "human_audio_fetch_failed": { "message": "Failed to get audio, try another source" }
+}

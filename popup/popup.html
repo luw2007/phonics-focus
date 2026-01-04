@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phonics Focus</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text" data-i18n="logo_text">Phonics Focus</span>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="enableToggle">
+        <span class="toggle-slider"></span>
+      </label>
+    </header>
+
+    <main class="popup-main">
+      <section class="current-rule">
+        <h2 class="section-title" data-i18n="section_current_rule">当前学习规则</h2>
+        <div class="rule-card" id="ruleCard">
+          <div class="rule-header">
+            <div class="rule-name" id="ruleName">Short A</div>
+            <div class="rule-pattern" id="rulePattern">/æ/</div>
+          </div>
+          <div class="rule-examples" id="ruleExamples">
+            <span class="example-word">cat</span>
+            <span class="example-word">map</span>
+            <span class="example-word">hat</span>
+          </div>
+        </div>
+        <div class="active-rules-list" id="activeRulesList">
+          <!-- Active rules will be populated here -->
+        </div>
+      </section>
+
+      <section class="rule-selector">
+        <h2 class="section-title" data-i18n="section_select_rule">选择规则</h2>
+        <select id="categorySelect" class="select-input">
+          <option value="letters" data-i18n="category_letters">26个字母基础发音</option>
+          <option value="short_vowels" data-i18n="category_short_vowels" selected>短元音组合</option>
+          <option value="long_vowels" data-i18n="category_long_vowels">长元音</option>
+          <option value="consonant_blends" data-i18n="category_consonant_blends">辅音组合</option>
+          <option value="r_controlled" data-i18n="category_r_controlled">R控制元音</option>
+          <option value="other_vowels" data-i18n="category_other_vowels">其他元音组合</option>
+        </select>
+        <div class="pattern-tags" id="patternTags">
+        </div>
+      </section>
+
+      <!-- Accordion: Appearance -->
+      <section class="accordion-group">
+        <button class="accordion-header" id="styleAccordionBtn">
+          <span class="accordion-title" data-i18n="section_highlight_style">🎨 高亮样式</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content hidden" id="styleAccordionContent">
+          <div class="style-options">
+            <label class="style-option">
+              <input type="radio" name="highlightStyle" value="underline" checked>
+              <span class="style-preview style-underline" data-i18n="style_underline">下划线</span>
+            </label>
+            <label class="style-option">
+              <input type="radio" name="highlightStyle" value="background">
+              <span class="style-preview style-background" data-i18n="style_background">背景色</span>
+            </label>
+            <label class="style-option">
+              <input type="radio" name="highlightStyle" value="color">
+              <span class="style-preview style-color" data-i18n="style_color">文字色</span>
+            </label>
+            <label class="style-option">
+              <input type="radio" name="highlightStyle" value="inline">
+              <span class="style-preview style-inline"><span data-i18n="style_inline">嵌入</span><span class="ipa-preview"
+                  data-i18n="ipa_inline_suffix">(IPA)</span></span>
+            </label>
+          </div>
+          <div class="color-config-panel" id="colorConfigPanel">
+            <div class="color-picker-row">
+              <div class="color-presets" id="colorPresets">
+                <button class="color-dot" data-color="#ff6b35" style="background-color: #ff6b35"></button>
+                <button class="color-dot" data-color="#ffd166" style="background-color: #ffd166"></button>
+                <button class="color-dot" data-color="#06d6a0" style="background-color: #06d6a0"></button>
+                <button class="color-dot" data-color="#118ab2" style="background-color: #118ab2"></button>
+                <button class="color-dot" data-color="#ef476f" style="background-color: #ef476f"></button>
+              </div>
+              <div class="color-input-group">
+                <div class="custom-picker-wrapper">
+                  <input type="color" id="nativeColorPicker" class="native-color-input">
+                  <div class="picker-icon">🎨</div>
+                </div>
+                <div class="hex-input-wrapper">
+                  <span class="hash-prefix">#</span>
+                  <input type="text" id="hexInput" class="hex-input" maxlength="6" spellcheck="false">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accordion: Voice -->
+      <section class="accordion-group">
+        <button class="accordion-header" id="voiceAccordionBtn">
+          <span class="accordion-title" data-i18n="section_tts_settings">🔊 发音设置</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content hidden" id="voiceAccordionContent">
+          <div class="tts-mode-selector">
+            <label class="tts-mode-option">
+              <input type="radio" name="ttsMode" value="tts" checked>
+              <span class="tts-mode-label" data-i18n="tts_mode_tts">合成发音</span>
+            </label>
+            <label class="tts-mode-option">
+              <input type="radio" name="ttsMode" value="human">
+              <span class="tts-mode-label" data-i18n="tts_mode_human">真人发音</span>
+            </label>
+          </div>
+          <div class="tts-voice-settings" id="ttsVoiceSettings">
+            <div class="voice-select-row">
+              <select id="voiceSelect" class="select-input">
+                <option value="" data-i18n="loading_voices">加载语音列表中...</option>
+              </select>
+              <button id="voicePreviewBtn" class="preview-btn" title="试听" data-i18n-attr="title"
+                data-i18n="preview_title">▶</button>
+            </div>
+            <div class="rate-slider-row">
+              <label class="rate-label" data-i18n="rate_label">语速</label>
+              <input type="range" id="ttsRate" min="0.5" max="1.5" step="0.1" value="1.0">
+              <span id="rateValue" class="rate-value">1.0x</span>
+            </div>
+          </div>
+          <div class="human-voice-settings hidden" id="humanVoiceSettings">
+            <div class="voice-select-row">
+              <select id="humanSourceSelect" class="select-input">
+                <option value="free_dictionary" data-i18n="human_source_free_dictionary">Free Dictionary API</option>
+                <option value="youdao" data-i18n="human_source_youdao">有道词典</option>
+                <option value="baidu" data-i18n="human_source_baidu">百度翻译</option>
+                <option value="google" data-i18n="human_source_google">Google 翻译</option>
+              </select>
+              <button id="humanPreviewBtn" class="preview-btn" title="试听" data-i18n-attr="title"
+                data-i18n="preview_title">▶</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>
