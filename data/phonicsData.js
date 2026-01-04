@@ -1,34 +1,34 @@
 const phonicsData = {
     categoryDescriptions: {
         letters: {
-            name: '26个字母基础发音',
-            description: '每个字母都有一个最常见的基础发音。掌握这26个发音是自然拼读的第一步。',
-            tip: '元音有5个：A E I O U，其余都是辅音。'
+            nameKey: 'category_letters',
+            descriptionKey: 'desc_letters',
+            tipKey: 'tip_letters'
         },
         short_vowels: {
-            name: '短元音组合',
-            description: '辅音+元音+辅音（CVC结构），中间的元音发"短音"。短音是元音最基础、最常见的发音。',
-            tip: '短音听起来短促有力，如 cat 的 /æ/、dog 的 /ɒ/。'
+            nameKey: 'category_short_vowels',
+            descriptionKey: 'desc_short_vowels',
+            tipKey: 'tip_short_vowels'
         },
         long_vowels: {
-            name: '长元音',
-            description: '长元音就是元音字母"说出自己的名字"。有两种方式让元音变长音：魔法E（Magic-E）和元音组合（Vowel Teams）。',
-            tip: 'A说/eɪ/，E说/iː/，I说/aɪ/，O说/oʊ/，U说/juː/。'
+            nameKey: 'category_long_vowels',
+            descriptionKey: 'desc_long_vowels',
+            tipKey: 'tip_long_vowels'
         },
         consonant_blends: {
-            name: '辅音组合',
-            description: '两个辅音字母组合在一起，发出一个全新的、独立的音（Digraphs）。注意：这不是两个音拼起来，而是一个新的音。',
-            tip: 'sh、ch、th、ng 各发一个独立的音，需要单独记忆。'
+            nameKey: 'category_consonant_blends',
+            descriptionKey: 'desc_consonant_blends',
+            tipKey: 'tip_consonant_blends'
         },
         r_controlled: {
-            name: 'R控制元音（Bossy R）',
-            description: '当元音后面跟着字母r时，r会"霸道"地改变元音的发音，形成独特的音。',
-            tip: 'er, ir, ur 这三个发音完全一样，都是 /ɜːr/。'
+            nameKey: 'category_r_controlled',
+            descriptionKey: 'desc_r_controlled',
+            tipKey: 'tip_r_controlled'
         },
         other_vowels: {
-            name: '其他元音组合',
-            description: '一些特殊的元音组合，发出的是"双元音"——发音时嘴型会有明显的变化。',
-            tip: 'ou/ow 发 /aʊ/（啊呜），oi/oy 发 /ɔɪ/（哦伊）。'
+            nameKey: 'category_other_vowels',
+            descriptionKey: 'desc_other_vowels',
+            tipKey: 'tip_other_vowels'
         }
     },
 
@@ -301,7 +301,7 @@ const phonicsData = {
     ],
 
     long_vowels: [
-        { pattern: 'a_e', pronunciation: '/eɪ/', rule: '魔法E（Magic-E）：结尾的e不发音，但让前面的a发长音 /eɪ/（字母A的名字）。', words: [
+        { pattern: 'a_e', pronunciation: '/eɪ/', ruleKey: 'rule_magic_e_a', words: [
             { word: 'cake', highlight: 'a_e', prefix: 'c', suffix: '' },
             { word: 'bake', highlight: 'a_e', prefix: 'b', suffix: '' },
             { word: 'game', highlight: 'a_e', prefix: 'g', suffix: '' },
@@ -309,7 +309,7 @@ const phonicsData = {
             { word: 'tape', highlight: 'a_e', prefix: 't', suffix: '' },
             { word: 'cape', highlight: 'a_e', prefix: 'c', suffix: '' },
         ]},
-        { pattern: 'i_e', pronunciation: '/aɪ/', rule: '魔法E：结尾的e让i发长音 /aɪ/（字母I的名字）。', words: [
+        { pattern: 'i_e', pronunciation: '/aɪ/', ruleKey: 'rule_magic_e_i', words: [
             { word: 'bike', highlight: 'i_e', prefix: 'b', suffix: '' },
             { word: 'kite', highlight: 'i_e', prefix: 'k', suffix: '' },
             { word: 'time', highlight: 'i_e', prefix: 't', suffix: '' },
@@ -319,7 +319,7 @@ const phonicsData = {
             { word: 'nine', highlight: 'i_e', prefix: 'n', suffix: '' },
             { word: 'pine', highlight: 'i_e', prefix: 'p', suffix: '' },
         ]},
-        { pattern: 'o_e', pronunciation: '/oʊ/', rule: '魔法E：结尾的e让o发长音 /oʊ/（字母O的名字）。', words: [
+        { pattern: 'o_e', pronunciation: '/oʊ/', ruleKey: 'rule_magic_e_o', words: [
             { word: 'bone', highlight: 'o_e', prefix: 'b', suffix: '' },
             { word: 'cone', highlight: 'o_e', prefix: 'c', suffix: '' },
             { word: 'home', highlight: 'o_e', prefix: 'h', suffix: '' },
@@ -329,7 +329,7 @@ const phonicsData = {
             { word: 'rose', highlight: 'o_e', prefix: 'r', suffix: '' },
             { word: 'hose', highlight: 'o_e', prefix: 'h', suffix: '' },
         ]},
-        { pattern: 'u_e', pronunciation: '/juː/', rule: '魔法E：结尾的e让u发长音 /juː/（字母U的名字）。', words: [
+        { pattern: 'u_e', pronunciation: '/juː/', ruleKey: 'rule_magic_e_u', words: [
             { word: 'cube', highlight: 'u_e', prefix: 'c', suffix: '' },
             { word: 'tube', highlight: 'u_e', prefix: 't', suffix: '' },
             { word: 'cute', highlight: 'u_e', prefix: 'c', suffix: '' },
@@ -337,48 +337,48 @@ const phonicsData = {
             { word: 'tune', highlight: 'u_e', prefix: 't', suffix: '' },
             { word: 'mule', highlight: 'u_e', prefix: 'm', suffix: '' },
         ]},
-        { pattern: 'ai', pronunciation: '/eɪ/', rule: '元音组合：两个元音在一起，第一个发长音，第二个不发音。', words: [
+        { pattern: 'ai', pronunciation: '/eɪ/', ruleKey: 'rule_vowel_team_ai', words: [
             { word: 'rain', highlight: 'ai', prefix: 'r', suffix: 'n' },
             { word: 'tail', highlight: 'ai', prefix: 't', suffix: 'l' },
             { word: 'wait', highlight: 'ai', prefix: 'w', suffix: 't' },
             { word: 'snail', highlight: 'ai', prefix: 'sn', suffix: 'l' },
         ]},
-        { pattern: 'ay', pronunciation: '/eɪ/', rule: '元音组合：ay和ai发音相同，ay通常出现在词尾。', words: [
+        { pattern: 'ay', pronunciation: '/eɪ/', ruleKey: 'rule_vowel_team_ay', words: [
             { word: 'bay', highlight: 'ay', prefix: 'b', suffix: '' },
             { word: 'day', highlight: 'ay', prefix: 'd', suffix: '' },
             { word: 'May', highlight: 'ay', prefix: 'M', suffix: '' },
             { word: 'play', highlight: 'ay', prefix: 'pl', suffix: '' },
         ]},
-        { pattern: 'ee', pronunciation: '/iː/', rule: '双元音组合：两个e在一起，发字母E的名字 /iː/。', words: [
+        { pattern: 'ee', pronunciation: '/iː/', ruleKey: 'rule_vowel_team_ee', words: [
             { word: 'bee', highlight: 'ee', prefix: 'b', suffix: '' },
             { word: 'tree', highlight: 'ee', prefix: 'tr', suffix: '' },
             { word: 'green', highlight: 'ee', prefix: 'gr', suffix: 'n' },
             { word: 'sheep', highlight: 'ee', prefix: 'sh', suffix: 'p' },
         ]},
-        { pattern: 'ea', pronunciation: '/iː/', rule: '元音组合：ea通常发 /iː/，e发音，a不发音。', words: [
+        { pattern: 'ea', pronunciation: '/iː/', ruleKey: 'rule_vowel_team_ea', words: [
             { word: 'tea', highlight: 'ea', prefix: 't', suffix: '' },
             { word: 'sea', highlight: 'ea', prefix: 's', suffix: '' },
             { word: 'pea', highlight: 'ea', prefix: 'p', suffix: '' },
             { word: 'leaf', highlight: 'ea', prefix: 'l', suffix: 'f' },
         ]},
-        { pattern: 'oa', pronunciation: '/oʊ/', rule: '元音组合：o发长音 /oʊ/，a不发音。', words: [
+        { pattern: 'oa', pronunciation: '/oʊ/', ruleKey: 'rule_vowel_team_oa', words: [
             { word: 'coat', highlight: 'oa', prefix: 'c', suffix: 't' },
             { word: 'goat', highlight: 'oa', prefix: 'g', suffix: 't' },
             { word: 'road', highlight: 'oa', prefix: 'r', suffix: 'd' },
             { word: 'toad', highlight: 'oa', prefix: 't', suffix: 'd' },
         ]},
-        { pattern: 'ow', pronunciation: '/oʊ/', rule: 'ow有两种发音：/oʊ/（如snow）或 /aʊ/（如cow）。这里是 /oʊ/。', words: [
+        { pattern: 'ow', pronunciation: '/oʊ/', ruleKey: 'rule_vowel_team_ow_long', words: [
             { word: 'snow', highlight: 'ow', prefix: 'sn', suffix: '' },
             { word: 'row', highlight: 'ow', prefix: 'r', suffix: '' },
             { word: 'crow', highlight: 'ow', prefix: 'cr', suffix: '' },
             { word: 'window', highlight: 'ow', prefix: 'wind', suffix: '' },
         ]},
-        { pattern: 'igh', pronunciation: '/aɪ/', rule: '特殊组合：igh中只有i发音，gh完全不发音。', words: [
+        { pattern: 'igh', pronunciation: '/aɪ/', ruleKey: 'rule_vowel_team_igh', words: [
             { word: 'light', highlight: 'igh', prefix: 'l', suffix: 't' },
             { word: 'high', highlight: 'igh', prefix: 'h', suffix: '' },
             { word: 'night', highlight: 'igh', prefix: 'n', suffix: 't' },
         ]},
-        { pattern: 'oo', pronunciation: '/uː/', rule: '双O组合：通常发长音 /uː/，但有时发短音 /ʊ/。', words: [
+        { pattern: 'oo', pronunciation: '/uː/', ruleKey: 'rule_vowel_team_oo', words: [
             { word: 'moon', highlight: 'oo', prefix: 'm', suffix: 'n' },
             { word: 'zoo', highlight: 'oo', prefix: 'z', suffix: '' },
             { word: 'food', highlight: 'oo', prefix: 'f', suffix: 'd' },
@@ -387,31 +387,31 @@ const phonicsData = {
     ],
 
     consonant_blends: [
-        { pattern: 'sh', pronunciation: '/ʃ/', rule: '辅音组合（Digraph）：sh发一个全新的音，像让人安静的"嘘"声。', words: [
+        { pattern: 'sh', pronunciation: '/ʃ/', ruleKey: 'rule_blend_sh', words: [
             { word: 'ship', highlight: 'sh', prefix: '', suffix: 'ip' },
             { word: 'shop', highlight: 'sh', prefix: '', suffix: 'op' },
             { word: 'sheep', highlight: 'sh', prefix: '', suffix: 'eep' },
             { word: 'fish', highlight: 'sh', prefix: 'fi', suffix: '' },
         ]},
-        { pattern: 'ch', pronunciation: '/tʃ/', rule: '辅音组合：ch发类似"吐"的音，独立的一个音。', words: [
+        { pattern: 'ch', pronunciation: '/tʃ/', ruleKey: 'rule_blend_ch', words: [
             { word: 'chip', highlight: 'ch', prefix: '', suffix: 'ip' },
             { word: 'chop', highlight: 'ch', prefix: '', suffix: 'op' },
             { word: 'check', highlight: 'ch', prefix: '', suffix: 'eck' },
             { word: 'church', highlight: 'ch', prefix: '', suffix: 'urch' },
         ]},
-        { pattern: 'th', pronunciation: '/θ/', rule: '辅音组合：舌头放在上下齿之间吹气。', words: [
+        { pattern: 'th', pronunciation: '/θ/', ruleKey: 'rule_blend_th', words: [
             { word: 'think', highlight: 'th', prefix: '', suffix: 'ink' },
             { word: 'thank', highlight: 'th', prefix: '', suffix: 'ank' },
             { word: 'three', highlight: 'th', prefix: '', suffix: 'ree' },
             { word: 'bath', highlight: 'th', prefix: 'ba', suffix: '' },
         ]},
-        { pattern: 'ng', pronunciation: '/ŋ/', rule: '辅音组合：鼻音，气流从鼻子出来。', words: [
+        { pattern: 'ng', pronunciation: '/ŋ/', ruleKey: 'rule_blend_ng', words: [
             { word: 'king', highlight: 'ng', prefix: 'ki', suffix: '' },
             { word: 'sing', highlight: 'ng', prefix: 'si', suffix: '' },
             { word: 'swing', highlight: 'ng', prefix: 'swi', suffix: '' },
             { word: 'song', highlight: 'ng', prefix: 'so', suffix: '' },
         ]},
-        { pattern: 'nk', pronunciation: '/ŋk/', rule: '辅音组合：ng + k，先发鼻音再加/k/。', words: [
+        { pattern: 'nk', pronunciation: '/ŋk/', ruleKey: 'rule_blend_nk', words: [
             { word: 'ink', highlight: 'nk', prefix: 'i', suffix: '' },
             { word: 'bank', highlight: 'nk', prefix: 'ba', suffix: '' },
             { word: 'think', highlight: 'nk', prefix: 'thi', suffix: '' },
@@ -420,31 +420,31 @@ const phonicsData = {
     ],
 
     r_controlled: [
-        { pattern: 'ar', pronunciation: '/ɑːr/', rule: 'R控制元音（Bossy R）：r让前面的a发开口的卷舌音。', words: [
+        { pattern: 'ar', pronunciation: '/ɑːr/', ruleKey: 'rule_r_ar', words: [
             { word: 'star', highlight: 'ar', prefix: 'st', suffix: '' },
             { word: 'card', highlight: 'ar', prefix: 'c', suffix: 'd' },
             { word: 'park', highlight: 'ar', prefix: 'p', suffix: 'k' },
             { word: 'yard', highlight: 'ar', prefix: 'y', suffix: 'd' },
         ]},
-        { pattern: 'ir', pronunciation: '/ɜːr/', rule: 'R控制元音：er, ir, ur发音完全相同。', words: [
+        { pattern: 'ir', pronunciation: '/ɜːr/', ruleKey: 'rule_r_ir', words: [
             { word: 'bird', highlight: 'ir', prefix: 'b', suffix: 'd' },
             { word: 'girl', highlight: 'ir', prefix: 'g', suffix: 'l' },
             { word: 'skirt', highlight: 'ir', prefix: 'sk', suffix: 't' },
             { word: 'dirty', highlight: 'ir', prefix: 'd', suffix: 'ty' },
         ]},
-        { pattern: 'ur', pronunciation: '/ɜːr/', rule: 'R控制元音：ur和er, ir发音相同。', words: [
+        { pattern: 'ur', pronunciation: '/ɜːr/', ruleKey: 'rule_r_ur', words: [
             { word: 'nurse', highlight: 'ur', prefix: 'n', suffix: 'se' },
             { word: 'purple', highlight: 'ur', prefix: 'p', suffix: 'ple' },
             { word: 'burn', highlight: 'ur', prefix: 'b', suffix: 'n' },
             { word: 'purse', highlight: 'ur', prefix: 'p', suffix: 'se' },
         ]},
-        { pattern: 'or', pronunciation: '/ɔːr/', rule: 'R控制元音：or发圆唇的卷舌音。', words: [
+        { pattern: 'or', pronunciation: '/ɔːr/', ruleKey: 'rule_r_or', words: [
             { word: 'horse', highlight: 'or', prefix: 'h', suffix: 'se' },
             { word: 'fork', highlight: 'or', prefix: 'f', suffix: 'k' },
             { word: 'corner', highlight: 'or', prefix: 'c', suffix: 'ner' },
             { word: 'tractor', highlight: 'or', prefix: 'tract', suffix: '' },
         ]},
-        { pattern: 'er', pronunciation: '/ər/', rule: 'R控制元音：er在非重读音节发弱化的 /ər/。', words: [
+        { pattern: 'er', pronunciation: '/ər/', ruleKey: 'rule_r_er', words: [
             { word: 'water', highlight: 'er', prefix: 'wat', suffix: '' },
             { word: 'sister', highlight: 'er', prefix: 'sist', suffix: '' },
             { word: 'letter', highlight: 'er', prefix: 'lett', suffix: '' },
@@ -453,37 +453,37 @@ const phonicsData = {
     ],
 
     other_vowels: [
-        { pattern: 'ou', pronunciation: '/aʊ/', rule: '双元音：嘴巴张大，从"啊"滑向"呜"。', words: [
+        { pattern: 'ou', pronunciation: '/aʊ/', ruleKey: 'rule_other_ou', words: [
             { word: 'mouse', highlight: 'ou', prefix: 'm', suffix: 'se' },
             { word: 'house', highlight: 'ou', prefix: 'h', suffix: 'se' },
             { word: 'out', highlight: 'ou', prefix: '', suffix: 't' },
             { word: 'shout', highlight: 'ou', prefix: 'sh', suffix: 't' },
         ]},
-        { pattern: 'ow', pronunciation: '/aʊ/', rule: '双元音：ow在这里发 /aʊ/（和ou相同）。', words: [
+        { pattern: 'ow', pronunciation: '/aʊ/', ruleKey: 'rule_other_ow', words: [
             { word: 'cow', highlight: 'ow', prefix: 'c', suffix: '' },
             { word: 'owl', highlight: 'ow', prefix: '', suffix: 'l' },
             { word: 'down', highlight: 'ow', prefix: 'd', suffix: 'n' },
             { word: 'town', highlight: 'ow', prefix: 't', suffix: 'n' },
         ]},
-        { pattern: 'oi', pronunciation: '/ɔɪ/', rule: '双元音：像惊讶地喊"哦伊"。', words: [
+        { pattern: 'oi', pronunciation: '/ɔɪ/', ruleKey: 'rule_other_oi', words: [
             { word: 'coin', highlight: 'oi', prefix: 'c', suffix: 'n' },
             { word: 'soil', highlight: 'oi', prefix: 's', suffix: 'l' },
             { word: 'noise', highlight: 'oi', prefix: 'n', suffix: 'se' },
             { word: 'join', highlight: 'oi', prefix: 'j', suffix: 'n' },
         ]},
-        { pattern: 'oy', pronunciation: '/ɔɪ/', rule: '双元音：oy和oi发音相同，通常出现在词尾。', words: [
+        { pattern: 'oy', pronunciation: '/ɔɪ/', ruleKey: 'rule_other_oy', words: [
             { word: 'toy', highlight: 'oy', prefix: 't', suffix: '' },
             { word: 'boy', highlight: 'oy', prefix: 'b', suffix: '' },
             { word: 'oyster', highlight: 'oy', prefix: '', suffix: 'ster' },
             { word: 'joy', highlight: 'oy', prefix: 'j', suffix: '' },
         ]},
-        { pattern: 'aw', pronunciation: '/ɔː/', rule: '元音组合：嘴巴张圆，发"奥"的音。', words: [
+        { pattern: 'aw', pronunciation: '/ɔː/', ruleKey: 'rule_other_aw', words: [
             { word: 'law', highlight: 'aw', prefix: 'l', suffix: '' },
             { word: 'saw', highlight: 'aw', prefix: 's', suffix: '' },
             { word: 'paw', highlight: 'aw', prefix: 'p', suffix: '' },
             { word: 'draw', highlight: 'aw', prefix: 'dr', suffix: '' },
         ]},
-        { pattern: 'au', pronunciation: '/ɔː/', rule: '元音组合：au和aw发音相同。', words: [
+        { pattern: 'au', pronunciation: '/ɔː/', ruleKey: 'rule_other_au', words: [
             { word: 'August', highlight: 'Au', prefix: '', suffix: 'gust' },
             { word: 'auto', highlight: 'au', prefix: '', suffix: 'to' },
         ]},

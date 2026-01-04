@@ -75,6 +75,13 @@
   margin-bottom: 8px;
 }
 
+.phonics-tooltip-desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
 .phonics-tooltip-speak {
   display: inline-flex;
   align-items: center;

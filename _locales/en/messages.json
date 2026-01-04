@@ -51,5 +51,56 @@
   "human_source_baidu": { "message": "Baidu Translate" },
   "human_source_google": { "message": "Google Translate" },
   "human_audio_play_failed": { "message": "Cannot play audio, try another source" },
-  "human_audio_fetch_failed": { "message": "Failed to get audio, try another source" }
+  "human_audio_fetch_failed": { "message": "Failed to get audio, try another source" },
+
+  "desc_letters": { "message": "Each letter has a most common basic sound. Mastering these 26 sounds is the first step in phonics." },
+  "tip_letters": { "message": "There are 5 vowels: A E I O U, the rest are consonants." },
+
+  "desc_short_vowels": { "message": "Consonant + Vowel + Consonant (CVC structure), the vowel in the middle makes a \"short sound\". Short sounds are the most basic and common vowel sounds." },
+  "tip_short_vowels": { "message": "Short sounds are crisp and short, like /æ/ in cat, /ɒ/ in dog." },
+
+  "desc_long_vowels": { "message": "Long vowels are when the vowel letter \"says its own name\". There are two ways to make a vowel long: Magic-E and Vowel Teams." },
+  "tip_long_vowels": { "message": "A says /eɪ/, E says /iː/, I says /aɪ/, O says /oʊ/, U says /juː/." },
+
+  "desc_consonant_blends": { "message": "Two consonant letters combined to make a new, independent sound (Digraphs). Note: This is not two sounds blended, but a new sound." },
+  "tip_consonant_blends": { "message": "sh, ch, th, ng each make a unique sound and need to be memorized separately." },
+
+  "desc_r_controlled": { "message": "When a vowel is followed by the letter r, the r \"bossily\" changes the vowel's sound to create a unique sound." },
+  "tip_r_controlled": { "message": "er, ir, ur all sound exactly the same: /ɜːr/." },
+
+  "desc_other_vowels": { "message": "Some special vowel combinations that make \"diphthongs\" - the mouth shape changes noticeably during pronunciation." },
+  "tip_other_vowels": { "message": "ou/ow says /aʊ/ (ow), oi/oy says /ɔɪ/ (oy)." },
+
+  "rule_magic_e_a": { "message": "Magic-E: The e at the end is silent but makes the a say its long sound /eɪ/ (letter A's name)." },
+  "rule_magic_e_i": { "message": "Magic-E: The e at the end makes the i say its long sound /aɪ/ (letter I's name)." },
+  "rule_magic_e_o": { "message": "Magic-E: The e at the end makes the o say its long sound /oʊ/ (letter O's name)." },
+  "rule_magic_e_u": { "message": "Magic-E: The e at the end makes the u say its long sound /juː/ (letter U's name)." },
+  
+  "rule_vowel_team_ai": { "message": "Vowel Team: Two vowels together, the first one says its long sound, the second is silent." },
+  "rule_vowel_team_ay": { "message": "Vowel Team: ay and ai sound the same, ay usually appears at the end of a word." },
+  "rule_vowel_team_ee": { "message": "Double Vowel Team: Two e's together say letter E's name /iː/." },
+  "rule_vowel_team_ea": { "message": "Vowel Team: ea usually says /iː/, e speaks, a is silent." },
+  "rule_vowel_team_oa": { "message": "Vowel Team: o says long sound /oʊ/, a is silent." },
+  "rule_vowel_team_ow_long": { "message": "ow has two sounds: /oʊ/ (like snow) or /aʊ/ (like cow). Here it is /oʊ/." },
+  "rule_vowel_team_igh": { "message": "Special Combo: Only i speaks in igh, gh is completely silent." },
+  "rule_vowel_team_oo": { "message": "Double O: Usually says long sound /uː/, but sometimes short /ʊ/." },
+
+  "rule_blend_sh": { "message": "Digraph: sh makes a new sound, like the \"shh\" sound to quiet someone." },
+  "rule_blend_ch": { "message": "Digraph: ch makes a sound like a sneeze/choo-choo train, a single sound." },
+  "rule_blend_th": { "message": "Digraph: Tongue placed between teeth to blow air." },
+  "rule_blend_ng": { "message": "Digraph: Nasal sound, air comes out through the nose." },
+  "rule_blend_nk": { "message": "Digraph: ng + k, nasal sound first then /k/." },
+
+  "rule_r_ar": { "message": "Bossy R: r makes the a say an open-mouthed curled-tongue sound." },
+  "rule_r_ir": { "message": "Bossy R: er, ir, ur sound exactly the same." },
+  "rule_r_ur": { "message": "Bossy R: ur sounds the same as er, ir." },
+  "rule_r_or": { "message": "Bossy R: or makes a round-mouthed curled-tongue sound." },
+  "rule_r_er": { "message": "Bossy R: er makes a weakened /ər/ sound in unstressed syllables." },
+
+  "rule_other_ou": { "message": "Diphthong: Mouth opens wide, sliding from \"ah\" to \"oo\"." },
+  "rule_other_ow": { "message": "Diphthong: ow says /aʊ/ here (same as ou)." },
+  "rule_other_oi": { "message": "Diphthong: Like shouting \"oy\" in surprise." },
+  "rule_other_oy": { "message": "Diphthong: oy and oi sound the same, usually at the end of a word." },
+  "rule_other_aw": { "message": "Vowel Team: Mouth opens round, making the \"aw\" sound." },
+  "rule_other_au": { "message": "Vowel Team: au and aw sound the same." }
 }

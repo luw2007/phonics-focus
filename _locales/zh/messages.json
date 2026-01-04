@@ -1,55 +1,248 @@
 {
-  "ext_name": { "message": "Phonics Focus" },
-  "ext_description": { "message": "沉浸式自然拼读伴侣 - 在网页浏览中学习英语发音规则" },
-
-  "title": { "message": "Phonics Focus" },
-  "logo_text": { "message": "Phonics Focus" },
-
-  "section_current_rule": { "message": "当前学习规则" },
-  "section_select_rule": { "message": "选择规则" },
-  "section_highlight_style": { "message": "高亮样式" },
-  "section_tts_settings": { "message": "发音设置" },
-
-  "category_letters": { "message": "26个字母基础发音" },
-  "category_short_vowels": { "message": "短元音组合" },
-  "category_long_vowels": { "message": "长元音" },
-  "category_consonant_blends": { "message": "辅音组合" },
-  "category_r_controlled": { "message": "R控制元音" },
-  "category_other_vowels": { "message": "其他元音组合" },
-
-  "style_underline": { "message": "下划线" },
-  "style_background": { "message": "背景色" },
-  "style_color": { "message": "文字色" },
-  "style_inline": { "message": "嵌入" },
-  "ipa_inline_suffix": { "message": "(IPA)" },
-  "bg_color_label": { "message": "背景色" },
-
-  "tts_mode_tts": { "message": "合成发音 (TTS)" },
-  "tts_mode_human": { "message": "真人发音" },
-
-  "loading_voices": { "message": "加载语音列表中..." },
-  "preview_title": { "message": "试听" },
-  "rate_label": { "message": "语速" },
-  "rate_unit_suffix": { "message": "x" },
-
-  "footer_hint": { "message": "配合 Phonics App 使用效果更佳" },
-
-  "chip_remove_symbol": { "message": "×" },
-  "please_select_rule": { "message": "请选择规则" },
-  "dash_symbol": { "message": "-" },
-
-  "no_voices_detected": { "message": "未检测到可用语音" },
-  "voice_source_system": { "message": "系统" },
-  "voice_source_online": { "message": "在线" },
-
-  "tooltip_no_ipa": { "message": "无音标" },
-  "tooltip_rule_prefix": { "message": "规则:" },
-  "tooltip_speak": { "message": "🔊 发音" },
-
-  "human_source_free_dictionary": { "message": "Free Dictionary API" },
-  "human_source_youdao": { "message": "有道词典" },
-  "human_source_baidu": { "message": "百度翻译" },
-  "human_source_google": { "message": "Google 翻译" },
-  "human_audio_play_failed": { "message": "无法播放音频，请尝试其他音源" },
-  "human_audio_fetch_failed": { "message": "获取音频失败，请尝试其他音源" }
+  "ext_name": {
+    "message": "Phonics Focus"
+  },
+  "ext_description": {
+    "message": "沉浸式自然拼读伴侣 - 在网页浏览中学习英语发音规则"
+  },
+  "title": {
+    "message": "Phonics Focus"
+  },
+  "logo_text": {
+    "message": "Phonics Focus"
+  },
+  "section_current_rule": {
+    "message": "当前学习规则"
+  },
+  "section_select_rule": {
+    "message": "选择规则"
+  },
+  "section_highlight_style": {
+    "message": "高亮样式"
+  },
+  "section_tts_settings": {
+    "message": "发音设置"
+  },
+  "category_letters": {
+    "message": "26个字母基础发音"
+  },
+  "category_short_vowels": {
+    "message": "短元音组合"
+  },
+  "category_long_vowels": {
+    "message": "长元音"
+  },
+  "category_consonant_blends": {
+    "message": "辅音组合"
+  },
+  "category_r_controlled": {
+    "message": "R控制元音"
+  },
+  "category_other_vowels": {
+    "message": "其他元音组合"
+  },
+  "style_underline": {
+    "message": "下划线"
+  },
+  "style_background": {
+    "message": "背景色"
+  },
+  "style_color": {
+    "message": "文字色"
+  },
+  "style_inline": {
+    "message": "嵌入"
+  },
+  "ipa_inline_suffix": {
+    "message": "(IPA)"
+  },
+  "bg_color_label": {
+    "message": "背景色"
+  },
+  "tts_mode_tts": {
+    "message": "合成发音 (TTS)"
+  },
+  "tts_mode_human": {
+    "message": "真人发音"
+  },
+  "loading_voices": {
+    "message": "加载语音列表中..."
+  },
+  "preview_title": {
+    "message": "试听"
+  },
+  "rate_label": {
+    "message": "语速"
+  },
+  "rate_unit_suffix": {
+    "message": "x"
+  },
+  "footer_hint": {
+    "message": "配合 Phonics App 使用效果更佳"
+  },
+  "chip_remove_symbol": {
+    "message": "×"
+  },
+  "please_select_rule": {
+    "message": "请选择规则"
+  },
+  "dash_symbol": {
+    "message": "-"
+  },
+  "no_voices_detected": {
+    "message": "未检测到可用语音"
+  },
+  "voice_source_system": {
+    "message": "系统"
+  },
+  "voice_source_online": {
+    "message": "在线"
+  },
+  "tooltip_no_ipa": {
+    "message": "无音标"
+  },
+  "tooltip_rule_prefix": {
+    "message": "规则:"
+  },
+  "tooltip_speak": {
+    "message": "🔊 发音"
+  },
+  "human_source_free_dictionary": {
+    "message": "Free Dictionary API"
+  },
+  "human_source_youdao": {
+    "message": "有道词典"
+  },
+  "human_source_baidu": {
+    "message": "百度翻译"
+  },
+  "human_source_google": {
+    "message": "Google 翻译"
+  },
+  "human_audio_play_failed": {
+    "message": "无法播放音频，请尝试其他音源"
+  },
+  "human_audio_fetch_failed": {
+    "message": "获取音频失败，请尝试其他音源"
+  },
+  "desc_letters": {
+    "message": "每个字母都有一个最常用的基础发音。掌握这26个发音是自然拼读的第一步。"
+  },
+  "tip_letters": {
+    "message": "元音有5个：A E I O U，其余为辅音。"
+  },
+  "desc_short_vowels": {
+    "message": "辅音+元音+辅音（CVC结构），中间的元音发\"短音\"。短音是最基础、最常见的元音发音。"
+  },
+  "tip_short_vowels": {
+    "message": "短音发音短促有力，如 cat 中的 /æ/，dog 中的 /ɒ/。"
+  },
+  "desc_long_vowels": {
+    "message": "长元音就是元音字母\"念出自己的名字\"。有两种情况变长音：魔法E和元音组合。"
+  },
+  "tip_long_vowels": {
+    "message": "A念 /eɪ/, E念 /iː/, I念 /aɪ/, O念 /oʊ/, U念 /juː/。"
+  },
+  "desc_consonant_blends": {
+    "message": "两个辅音字母组合在一起，发出一个新的、独立的声音（Digraphs）。注意：这不是两个音的拼凑，而是新音。"
+  },
+  "tip_consonant_blends": {
+    "message": "sh, ch, th, ng 都是发出一个独特的声音，需要单独记忆。"
+  },
+  "desc_r_controlled": {
+    "message": "元音字母后面跟着字母r，r会\"霸道地\"改变元音的发音，形成独特的卷舌音。"
+  },
+  "tip_r_controlled": {
+    "message": "er, ir, ur 发音完全一样：/ɜːr/。"
+  },
+  "desc_other_vowels": {
+    "message": "一些特殊的元音组合，发\"双元音\"——发音时口型有明显变化。"
+  },
+  "tip_other_vowels": {
+    "message": "ou/ow 发 /aʊ/ (嗷)，oi/oy 发 /ɔɪ/ (欧一)。"
+  },
+  "rule_magic_e_a": {
+    "message": "魔法E：末尾的e不发音，但是让前面的a发长音 /eɪ/ (字母A的名字)。"
+  },
+  "rule_magic_e_i": {
+    "message": "魔法E：末尾的e让前面的i发长音 /aɪ/ (字母I的名字)。"
+  },
+  "rule_magic_e_o": {
+    "message": "魔法E：末尾的e让前面的o发长音 /oʊ/ (字母O的名字)。"
+  },
+  "rule_magic_e_u": {
+    "message": "魔法E：末尾的e让前面的u发长音 /juː/ (字母U的名字)。"
+  },
+  "rule_vowel_team_ai": {
+    "message": "元音队：两个元音在一起，第一个发长音，第二个不发音。"
+  },
+  "rule_vowel_team_ay": {
+    "message": "元音队：ay 和 ai 发音一样，ay 通常出现在词尾。"
+  },
+  "rule_vowel_team_ee": {
+    "message": "双元音队：两个e在一起，发字母E的名字 /iː/。"
+  },
+  "rule_vowel_team_ea": {
+    "message": "元音队：ea 通常发 /iː/，e 说话，a 闭嘴。"
+  },
+  "rule_vowel_team_oa": {
+    "message": "元音队：o 发长音 /oʊ/，a 不发音。"
+  },
+  "rule_vowel_team_ow_long": {
+    "message": "ow 有两个发音：/oʊ/ (如 snow) 或 /aʊ/ (如 cow)。这里发 /oʊ/。"
+  },
+  "rule_vowel_team_igh": {
+    "message": "特殊组合：igh 中只有 i 说话，gh 完全不发音。"
+  },
+  "rule_vowel_team_oo": {
+    "message": "双O：通常发长音 /uː/，有时发短音 /ʊ/。"
+  },
+  "rule_blend_sh": {
+    "message": "字母组合：sh 发全新的声音，像让人安静的 \"嘘\" 声。"
+  },
+  "rule_blend_ch": {
+    "message": "字母组合：ch 发像打喷嚏/火车的声音，是一个单独的音。"
+  },
+  "rule_blend_th": {
+    "message": "字母组合：咬舌音，舌头放在上下牙之间吹气。"
+  },
+  "rule_blend_ng": {
+    "message": "字母组合：后鼻音，气流从鼻子里出来。"
+  },
+  "rule_blend_nk": {
+    "message": "字母组合：ng + k，先发后鼻音再发 /k/。"
+  },
+  "rule_r_ar": {
+    "message": "霸道R：r 让 a 发张大嘴的卷舌音。"
+  },
+  "rule_r_ir": {
+    "message": "霸道R：er, ir, ur 发音完全一样。"
+  },
+  "rule_r_ur": {
+    "message": "霸道R：ur 和 er, ir 发音一样。"
+  },
+  "rule_r_or": {
+    "message": "霸道R：or 发圆嘴卷舌音。"
+  },
+  "rule_r_er": {
+    "message": "霸道R：er 在非重读音节发弱化的 /ər/ 音。"
+  },
+  "rule_other_ou": {
+    "message": "双元音：口型由大变圆，从\"啊\"滑向\"呜\"。"
+  },
+  "rule_other_ow": {
+    "message": "双元音：ow 在这里发 /aʊ/ (和 ou 一样)。"
+  },
+  "rule_other_oi": {
+    "message": "双元音：像惊讶时喊 \"欧一\"。"
+  },
+  "rule_other_oy": {
+    "message": "双元音：oy 和 oi 发音一样，通常在词尾。"
+  },
+  "rule_other_aw": {
+    "message": "元音队：嘴巴张圆，发 \"奥\" 的音。"
+  },
+  "rule_other_au": {
+    "message": "元音队：au 和 aw 发音一样。"
+  }
 }

@@ -36,7 +36,7 @@ export class RuleMatcher {
             category,
             pattern: patternData.pattern,
             pronunciation: patternData.pronunciation,
-            rule: patternData.rule || null,
+            ruleKey: patternData.ruleKey || null,
             highlight: wordInfo.highlight
           });
         });
@@ -107,7 +107,7 @@ export class RuleMatcher {
         category: rule.category,
         pattern: rule.pattern,
         pronunciation: rule.pronunciation,
-        rule: null,
+        ruleKey: null,
         highlight: rule.pattern
       };
     }

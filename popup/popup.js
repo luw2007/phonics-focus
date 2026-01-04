@@ -194,6 +194,7 @@ class PopupController {
         const newLang = currentLang === 'zh' ? 'en' : 'zh';
         currentLang = newLang;
         chrome.storage.local.set({ uiLanguage: currentLang });
+        this.updateLangToggleText(currentLang);
         await loadMessages(currentLang);
         applyI18n();
         this.rateValueDisplay.textContent = `${this.ttsConfig.rate}${getMessage('rate_unit_suffix')}`;
@@ -205,13 +206,14 @@ class PopupController {
 
     if (this.themeToggle) {
       this.themeToggle.addEventListener('click', () => {
-        // Cycle: auto -> light -> dark -> auto
+        // Cancel Auto Mode: Simple Toggle Light <-> Dark
         if (this.currentTheme === 'auto') {
-          this.currentTheme = 'light';
-        } else if (this.currentTheme === 'light') {
-          this.currentTheme = 'dark';
+          // If currently Auto, switch to the opposite of system to ensure visual change
+          const systemIsDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          this.currentTheme = systemIsDark ? 'light' : 'dark';
         } else {
-          this.currentTheme = 'auto';
+          // Simple toggle
+          this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
         }
 
         chrome.storage.local.set({ theme: this.currentTheme });
@@ -309,6 +311,18 @@ class PopupController {
           btn.classList.remove('active');
         }
       });
+    }
+  }
+
+  updateLangToggleText(lang) {
+    if (this.langToggle) {
+      const iconText = this.langToggle.querySelector('.icon-text');
+      if (iconText) {
+        // If lang is 'auto', we might want to check the actual detected language, 
+        // but for the toggle button, let's just default to '文' if 'zh' or 'auto', and 'En' if 'en'.
+        // Or better yet, if it is 'en', show 'En', otherwise '文'.
+        iconText.textContent = lang === 'en' ? 'En' : '文';
+      }
     }
   }
 
@@ -526,7 +540,7 @@ class PopupController {
     const patternData = patterns.find(p => p.pattern === pattern);
 
     // Update header to show Category + Pattern info
-    this.ruleName.textContent = categoryDesc?.name || category;
+    this.ruleName.textContent = getMessage(categoryDesc?.nameKey) || category;
 
     // Reset play index if pattern changed
     if (this.lastRenderedPattern !== pattern) {

@@ -435,10 +435,13 @@ class PhonicsHighlighter {
     const noIpa = this.getMessage('tooltip_no_ipa');
     const rulePrefix = this.getMessage('tooltip_rule_prefix');
     const speakText = this.getMessage('tooltip_speak');
+    const ruleDesc = data.ruleKey ? this.getMessage(data.ruleKey) : '';
+
     this.tooltip.innerHTML = `
       <div class="phonics-tooltip-word">${data.word}</div>
       <div class="phonics-tooltip-ipa">${data.ipa || noIpa}</div>
       <div class="phonics-tooltip-rule">${rulePrefix} ${data.pattern} ${data.pronunciation}</div>
+      ${ruleDesc ? `<div class="phonics-tooltip-desc">${ruleDesc}</div>` : ''}
       <button class="phonics-tooltip-speak" data-word="${data.word}">${speakText}</button>
     `;
 
