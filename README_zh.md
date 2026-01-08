@@ -50,6 +50,7 @@
 
 ## 致谢
 
+- **[Phonics App](https://github.com/cocojojo5213/phonics-app)**: 灵感来自这款系统化的自然拼读学习应用，启发了将拼读教学融入日常网页浏览的想法。
 - **[CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)**: 本项目使用 CMU 字典进行发音数据和规则匹配。
 
 ## 许可证

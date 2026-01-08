@@ -50,6 +50,7 @@
 
 ## Acknowledgements
 
+- **[Phonics App](https://github.com/cocojojo5213/phonics-app)**: Inspired by this systematic phonics learning application, which sparked the idea of bringing phonics education into everyday web browsing.
 - **[CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)**: Used for phonetic data and rule matching.
 
 ## License
